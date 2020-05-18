@@ -3,30 +3,32 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0FA0018F2472C42F000F1211 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA0018E2472C42F000F1211 /* AppDelegate.swift */; };
-		0FA001932472C42F000F1211 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA001922472C42F000F1211 /* ViewController.swift */; };
+		0FA001932472C42F000F1211 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA001922472C42F000F1211 /* MainViewController.swift */; };
 		0FA001982472C431000F1211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FA001972472C431000F1211 /* Assets.xcassets */; };
 		0FA0019B2472C431000F1211 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FA001992472C431000F1211 /* LaunchScreen.storyboard */; };
 		0FA001A52472C559000F1211 /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA001A22472C559000F1211 /* UIColor+extensions.swift */; };
 		0FA001A62472C559000F1211 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA001A32472C559000F1211 /* Colors.swift */; };
 		0FA001A72472C559000F1211 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA001A42472C559000F1211 /* Images.swift */; };
+		0FA001A92472FD17000F1211 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA001A82472FD17000F1211 /* NavigationView.swift */; };
 		DAD7CE98F6C558B7CBA0D822 /* Pods_MagicPlants.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C9F9FABADF4EC13D3A34E2 /* Pods_MagicPlants.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0FA0018B2472C42F000F1211 /* MagicPlants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicPlants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FA0018E2472C42F000F1211 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0FA001922472C42F000F1211 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0FA001922472C42F000F1211 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0FA001972472C431000F1211 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FA0019A2472C431000F1211 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FA0019C2472C431000F1211 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FA001A22472C559000F1211 /* UIColor+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
 		0FA001A32472C559000F1211 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0FA001A42472C559000F1211 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		0FA001A82472FD17000F1211 /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		2E41DB029CD3CE70FAC0DC30 /* Pods-MagicPlants.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicPlants.release.xcconfig"; path = "Target Support Files/Pods-MagicPlants/Pods-MagicPlants.release.xcconfig"; sourceTree = "<group>"; };
 		48C9F9FABADF4EC13D3A34E2 /* Pods_MagicPlants.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagicPlants.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B75191A0027DDF17902283F8 /* Pods-MagicPlants.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicPlants.debug.xcconfig"; path = "Target Support Files/Pods-MagicPlants/Pods-MagicPlants.debug.xcconfig"; sourceTree = "<group>"; };
@@ -66,7 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				0FA0018E2472C42F000F1211 /* AppDelegate.swift */,
-				0FA001922472C42F000F1211 /* ViewController.swift */,
+				0FA001922472C42F000F1211 /* MainViewController.swift */,
+				0FA001A82472FD17000F1211 /* NavigationView.swift */,
 				0FA001972472C431000F1211 /* Assets.xcassets */,
 				0FA001992472C431000F1211 /* LaunchScreen.storyboard */,
 				0FA0019C2472C431000F1211 /* Info.plist */,
@@ -91,7 +94,6 @@
 				B75191A0027DDF17902283F8 /* Pods-MagicPlants.debug.xcconfig */,
 				2E41DB029CD3CE70FAC0DC30 /* Pods-MagicPlants.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -209,10 +211,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FA001932472C42F000F1211 /* ViewController.swift in Sources */,
+				0FA001932472C42F000F1211 /* MainViewController.swift in Sources */,
 				0FA001A62472C559000F1211 /* Colors.swift in Sources */,
 				0FA001A72472C559000F1211 /* Images.swift in Sources */,
 				0FA0018F2472C42F000F1211 /* AppDelegate.swift in Sources */,
+				0FA001A92472FD17000F1211 /* NavigationView.swift in Sources */,
 				0FA001A52472C559000F1211 /* UIColor+extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
