@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F8216C924757893000FD10C /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8216C824757893000FD10C /* ItemCell.swift */; };
 		0FA0018F2472C42F000F1211 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA0018E2472C42F000F1211 /* AppDelegate.swift */; };
 		0FA001932472C42F000F1211 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA001922472C42F000F1211 /* MainViewController.swift */; };
 		0FA001982472C431000F1211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FA001972472C431000F1211 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F8216C824757893000FD10C /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		0FA0018B2472C42F000F1211 /* MagicPlants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicPlants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FA0018E2472C42F000F1211 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FA001922472C42F000F1211 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				0FA0018E2472C42F000F1211 /* AppDelegate.swift */,
 				0FA001922472C42F000F1211 /* MainViewController.swift */,
 				0FA001A82472FD17000F1211 /* NavigationView.swift */,
+				0F8216C824757893000FD10C /* ItemCell.swift */,
 				0FA001972472C431000F1211 /* Assets.xcassets */,
 				0FA001992472C431000F1211 /* LaunchScreen.storyboard */,
 				0FA0019C2472C431000F1211 /* Info.plist */,
@@ -216,6 +219,7 @@
 				0FA001A72472C559000F1211 /* Images.swift in Sources */,
 				0FA0018F2472C42F000F1211 /* AppDelegate.swift in Sources */,
 				0FA001A92472FD17000F1211 /* NavigationView.swift in Sources */,
+				0F8216C924757893000FD10C /* ItemCell.swift in Sources */,
 				0FA001A52472C559000F1211 /* UIColor+extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,4 +16,7 @@ extension UIImage {
     static let basket = UIImage(imageLiteralResourceName: "Vector2")
     static let menu = UIImage(imageLiteralResourceName: "menuButton")
     static let close = UIImage(imageLiteralResourceName: "closeButton")
+    
+    static let img7 = UIImage(imageLiteralResourceName: "7")
+    static let img9 = UIImage(imageLiteralResourceName: "9")
 }
