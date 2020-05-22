@@ -40,11 +40,12 @@ class MainViewController: UIViewController {
     override func loadView() {
         super.loadView()
         
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 216, height: 331)
-        layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 31
-        layout.sectionInset.bottom = 100
+      //  let layout = UICollectionViewFlowLayout()
+        let layout: PlantsLayout = PlantsLayout(itemSize: CGSize(width: 216, height: 331))
+    //    layout.itemSize = CGSize(width: 216, height: 331)
+    //    layout.scrollDirection = .horizontal
+    //    layout.minimumLineSpacing = 31
+  //      layout.sectionInset.bottom = 100
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.showsHorizontalScrollIndicator = false
@@ -91,12 +92,12 @@ class MainViewController: UIViewController {
     
     @objc
     private func didTapMenu() {
-        //  navigationController?.popViewController(animated: true)
+        
     }
     
     @objc
     private func didTapClose() {
-        
+        //  navigationController?.popViewController(animated: true)
     }
 }
 
@@ -118,8 +119,6 @@ extension MainViewController: UICollectionViewDataSource {
       //  cell.layer.borderWidth = 0.5
      //   cell.layer.cornerRadius = 20
     
-        
-        
         return cell
     }
     
