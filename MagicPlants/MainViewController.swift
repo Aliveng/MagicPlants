@@ -37,12 +37,13 @@ class MainViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 216, height: 331)
         layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 31
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         view.addSubview(bottomPanelView)
         view.addSubview(collectionView)
-        collectionView.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        collectionView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         collectionView.register(ItemCell.self, forCellWithReuseIdentifier: "ItemCell")
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -78,7 +79,6 @@ class MainViewController: UIViewController {
             item.left.equalToSuperview()
             item.right.equalToSuperview()
         })
-        
     }
     
     @objc
@@ -90,7 +90,6 @@ class MainViewController: UIViewController {
     private func didTapClose() {
         
     }
-    
 }
 
 extension MainViewController: UICollectionViewDataSource {
@@ -106,9 +105,12 @@ extension MainViewController: UICollectionViewDataSource {
         (cell as? ItemCell)?.priseLabel.text = "\(listItem[indexPath.row].price)"
         (cell as? ItemCell)?.sizeLabel.text = "\(listItem[indexPath.row].size)"
         cell.backgroundColor = .clear
-        cell.layer.borderColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+       // cell.layer.borderColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
       //  cell.layer.borderWidth = 0.5
      //   cell.layer.cornerRadius = 20
+    
+        
+        
         return cell
     }
     

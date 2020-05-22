@@ -19,4 +19,6 @@ extension UIImage {
     
     static let img7 = UIImage(imageLiteralResourceName: "7")
     static let img9 = UIImage(imageLiteralResourceName: "9")
+    
+    static let bagButton = UIImage(imageLiteralResourceName: "bagButton")
 }

@@ -14,8 +14,18 @@ class ItemCell: UICollectionViewCell {
     
     lazy var cellCardView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 20
+        view.layer.cornerRadius = 25
         view.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+        return view
+    }()
+    
+    lazy var bagButton: UIButton = {
+        let view = UIButton()
+        view.isEnabled = true
+        view.setImage(.bagButton, for: .normal)
+        view.addTarget(self,
+                       action: #selector(didTapBagButton),
+                       for: .touchUpInside)
         return view
     }()
     
@@ -29,7 +39,7 @@ class ItemCell: UICollectionViewCell {
         view.textColor = .gray
         view.numberOfLines = 0
         view.textAlignment = .left
-   //     view.font = view.font.withSize(15)
+        view.font = view.font.withSize(20)
         return view
     }()
     
@@ -38,6 +48,7 @@ class ItemCell: UICollectionViewCell {
         view.textColor = .gray
         view.numberOfLines = 0
         view.textAlignment = .left
+        view.font = view.font.withSize(12)
         return view
     }()
     
@@ -46,6 +57,7 @@ class ItemCell: UICollectionViewCell {
         view.textColor = .gray
         view.numberOfLines = 0
         view.textAlignment = .left
+        view.font = view.font.withSize(15)
         return view
     }()
     
@@ -57,6 +69,7 @@ class ItemCell: UICollectionViewCell {
         cellCardView.addSubview(sizeLabel)
         cellCardView.addSubview(nameLabel)
         cellCardView.addSubview(priseLabel)
+        cellCardView.addSubview(bagButton)
         
         cellCardView.snp.makeConstraints({ item in
             item.left.equalToSuperview()
@@ -64,6 +77,11 @@ class ItemCell: UICollectionViewCell {
             item.height.equalTo(261)
             item.width.equalTo(216)
             item.bottom.equalToSuperview()
+        })
+        
+        sizeLabel.snp.makeConstraints({ item in
+            item.left.equalToSuperview().offset(15)
+            item.top.equalToSuperview().offset(40)
         })
         
         imageView.snp.makeConstraints({ item in
@@ -74,19 +92,27 @@ class ItemCell: UICollectionViewCell {
         })
         
         nameLabel.snp.makeConstraints({ item in
-            item.left.equalToSuperview().offset(16)
-            item.bottom.equalTo(priseLabel.snp.top).offset(-10)
+            item.left.equalToSuperview().offset(26)
+            item.bottom.equalTo(priseLabel.snp.top).offset(-2)
         })
         
         priseLabel.snp.makeConstraints({ item in
-            item.bottom.equalToSuperview().offset(-20)
-            item.right.equalToSuperview().offset(-70)
+            item.left.equalToSuperview().offset(26.93)
+            item.bottom.equalToSuperview().offset(-19)
         })
         
-        
+        bagButton.snp.makeConstraints({ item in
+            item.height.equalTo(50)
+            item.width.equalTo(50)
+            item.right.equalToSuperview().offset(-28)
+            item.bottom.equalToSuperview().offset(-19)
+        })
 
-        
-
+    }
+    
+    @objc
+    private func didTapBagButton() {
+        print("\(nameLabel.text) добавлен в карзину")
     }
     
     required init?(coder: NSCoder) {
