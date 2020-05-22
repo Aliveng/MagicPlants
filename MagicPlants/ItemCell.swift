@@ -39,7 +39,7 @@ class ItemCell: UICollectionViewCell {
         view.textColor = .gray
         view.numberOfLines = 0
         view.textAlignment = .left
-        view.font = view.font.withSize(20)
+        view.font = view.font.withSize(18)
         return view
     }()
     
@@ -57,7 +57,7 @@ class ItemCell: UICollectionViewCell {
         view.textColor = .gray
         view.numberOfLines = 0
         view.textAlignment = .left
-        view.font = view.font.withSize(15)
+        view.font = view.font.withSize(12)
         return view
     }()
     
@@ -80,8 +80,8 @@ class ItemCell: UICollectionViewCell {
         })
         
         sizeLabel.snp.makeConstraints({ item in
-            item.left.equalToSuperview().offset(15)
-            item.top.equalToSuperview().offset(40)
+            item.left.equalToSuperview().offset(12)
+            item.top.equalToSuperview().offset(80)
         })
         
         imageView.snp.makeConstraints({ item in

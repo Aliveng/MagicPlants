@@ -15,6 +15,7 @@ struct Item {
     let name: String
     let price: String
     let size: String
+    let fonColor: UIColor
 }
 
 class MainViewController: UIViewController {
@@ -22,8 +23,13 @@ class MainViewController: UIViewController {
     var collectionView: UICollectionView!
     
     let listItem: [Item] = [
-        Item(image: .img9, name: "Yucca", price: "From $25", size: "75cm"),
-        Item(image: .img7, name: "Yucca", price: "From $25", size: "75cm")
+        Item(image: .img9, name: "Pachira", price: "From $25", size: "75cm"),
+        Item(image: .img7, name: "Zamiokulkas", price: "From $25", size: "75cm"),
+        Item(image: .img8, name: "Zamiokulkas", price: "From $25", size: "75cm"),
+        Item(image: .img6, name: "Chrysalidocarpus", price: "From $25", size: "75cm"),
+        Item(image: .img4, name: "Strelitzia", price: "From $25", size: "75cm"),
+        Item(image: .img3, name: "Dracaena", price: "From $35", size: "75cm"),
+        Item(image: .img10, name: "Peperomy", price: "From $25", size: "75cm")
     ]
     
     lazy var bottomPanelView: NavigationView = {
@@ -38,8 +44,10 @@ class MainViewController: UIViewController {
         layout.itemSize = CGSize(width: 216, height: 331)
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 31
+        layout.sectionInset.bottom = 100
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.showsHorizontalScrollIndicator = false
         
         view.addSubview(bottomPanelView)
         view.addSubview(collectionView)
@@ -95,7 +103,7 @@ class MainViewController: UIViewController {
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //  return listItem.count
-        return 4
+        return 7
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
