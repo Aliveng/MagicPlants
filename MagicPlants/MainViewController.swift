@@ -23,13 +23,13 @@ class MainViewController: UIViewController {
     var collectionView: UICollectionView!
     
     let listItem: [Item] = [
-        Item(image: .img9, name: "Pachira", price: "From $25", size: "75cm"),
-        Item(image: .img7, name: "Zamiokulkas", price: "From $25", size: "75cm"),
-        Item(image: .img8, name: "Zamiokulkas", price: "From $25", size: "75cm"),
-        Item(image: .img6, name: "Chrysalidocarpus", price: "From $25", size: "75cm"),
-        Item(image: .img4, name: "Strelitzia", price: "From $25", size: "75cm"),
-        Item(image: .img3, name: "Dracaena", price: "From $35", size: "75cm"),
-        Item(image: .img10, name: "Peperomy", price: "From $25", size: "75cm")
+        Item(image: .img9, name: "Pachira", price: "From $25", size: "75cm", fonColor: .fonBlue),
+        Item(image: .img7, name: "Zamiokulkas", price: "From $25", size: "75cm", fonColor: .fonOrange),
+        Item(image: .img8, name: "Zamiokulkas", price: "From $25", size: "75cm", fonColor: .fonBrown),
+        Item(image: .img6, name: "Chrysalidocar", price: "From $25", size: "75cm", fonColor: .fonBlue),
+        Item(image: .img4, name: "Strelitzia", price: "From $25", size: "75cm", fonColor: .fonOrange),
+        Item(image: .img3, name: "Dracaena", price: "From $35", size: "75cm", fonColor: .fonBrown),
+        Item(image: .img10, name: "Peperomy", price: "From $25", size: "75cm", fonColor: .fonBlue)
     ]
     
     lazy var bottomPanelView: NavigationView = {
@@ -112,6 +112,7 @@ extension MainViewController: UICollectionViewDataSource {
         (cell as? ItemCell)?.nameLabel.text = "\(listItem[indexPath.row].name)"
         (cell as? ItemCell)?.priseLabel.text = "\(listItem[indexPath.row].price)"
         (cell as? ItemCell)?.sizeLabel.text = "\(listItem[indexPath.row].size)"
+        (cell as? ItemCell)?.cellCardView.backgroundColor = listItem[indexPath.row].fonColor
         cell.backgroundColor = .clear
        // cell.layer.borderColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
       //  cell.layer.borderWidth = 0.5

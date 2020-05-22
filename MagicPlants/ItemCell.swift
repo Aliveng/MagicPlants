@@ -39,7 +39,7 @@ class ItemCell: UICollectionViewCell {
         view.textColor = .gray
         view.numberOfLines = 0
         view.textAlignment = .left
-        view.font = view.font.withSize(18)
+        view.font = view.font.withSize(16)
         return view
     }()
     
@@ -92,19 +92,19 @@ class ItemCell: UICollectionViewCell {
         })
         
         nameLabel.snp.makeConstraints({ item in
-            item.left.equalToSuperview().offset(26)
+            item.left.equalToSuperview().offset(20)
             item.bottom.equalTo(priseLabel.snp.top).offset(-2)
         })
         
         priseLabel.snp.makeConstraints({ item in
-            item.left.equalToSuperview().offset(26.93)
+            item.left.equalToSuperview().offset(20.93)
             item.bottom.equalToSuperview().offset(-19)
         })
         
         bagButton.snp.makeConstraints({ item in
             item.height.equalTo(50)
             item.width.equalTo(50)
-            item.right.equalToSuperview().offset(-28)
+            item.right.equalToSuperview().offset(-18)
             item.bottom.equalToSuperview().offset(-19)
         })
 

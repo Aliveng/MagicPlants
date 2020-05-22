@@ -10,5 +10,9 @@ import UIKit
 
 
 extension UIColor {
-    static let fon = UIColor(hex: "F2F3F7")
+    
+    static let fonBlue = UIColor(hex: "8DBFF4")
+    static let fonBrown = UIColor(hex: "BFA8A3")
+    static let fonOrange = UIColor(hex: "FAC972")
+    
 }
