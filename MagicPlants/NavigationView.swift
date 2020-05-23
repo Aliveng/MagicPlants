@@ -68,7 +68,6 @@ class NavigationView: UIView {
         })
         
         basketButton.snp.makeConstraints({ item in
-//item.height.equalTo(20.86)
             item.height.equalTo(18)
             item.width.equalTo(21)
             item.centerY.equalTo(mainButton.snp.centerY)

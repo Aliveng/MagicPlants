@@ -12,10 +12,27 @@ import SnapKit
 
 class ItemCell: UICollectionViewCell {
     
+    var colorCustom: UIColor = .white {
+        didSet {
+            nameLabel.textColor = colorCustom
+            priseLabel.textColor = colorCustom
+            sizeLabel.textColor = colorCustom
+        }
+    }
+    
     lazy var cellCardView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 25
-        view.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+        return view
+    }()
+    
+    lazy var shadowCellCardView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.shadowColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        view.layer.shadowRadius = 10
+        view.layer.shadowOpacity = 0.6
+        view.layer.shadowOffset = CGSize(width: 2, height: 8)
         return view
     }()
     
@@ -36,34 +53,35 @@ class ItemCell: UICollectionViewCell {
     
     lazy var nameLabel: UILabel = {
         let view = UILabel()
-        view.textColor = .gray
+        view.textColor = colorCustom
         view.numberOfLines = 0
         view.textAlignment = .left
-        view.font = view.font.withSize(16)
+        view.font = .boldSystemFont(ofSize: 16)
         return view
     }()
     
     lazy var priseLabel: UILabel = {
         let view = UILabel()
-        view.textColor = .gray
+        view.textColor = colorCustom
         view.numberOfLines = 0
         view.textAlignment = .left
-        view.font = view.font.withSize(12)
+        view.font = .systemFont(ofSize: 14)
         return view
     }()
     
     lazy var sizeLabel: UILabel = {
         let view = UILabel()
-        view.textColor = .gray
+        view.textColor = colorCustom
         view.numberOfLines = 0
         view.textAlignment = .left
-        view.font = view.font.withSize(12)
+        view.font = .boldSystemFont(ofSize: 12)
         return view
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        addSubview(shadowCellCardView)
         addSubview(cellCardView)
         cellCardView.addSubview(imageView)
         cellCardView.addSubview(sizeLabel)
@@ -79,9 +97,17 @@ class ItemCell: UICollectionViewCell {
             item.bottom.equalToSuperview()
         })
         
+        shadowCellCardView.snp.makeConstraints({ item in
+            item.left.equalToSuperview()
+            item.right.equalToSuperview()
+            item.height.equalTo(200)
+            item.width.equalTo(50)
+            item.bottom.equalToSuperview().offset(-25)
+        })
+        
         sizeLabel.snp.makeConstraints({ item in
             item.left.equalToSuperview().offset(12)
-            item.top.equalToSuperview().offset(80)
+            item.top.equalToSuperview().offset(85)
         })
         
         imageView.snp.makeConstraints({ item in
@@ -93,12 +119,13 @@ class ItemCell: UICollectionViewCell {
         
         nameLabel.snp.makeConstraints({ item in
             item.left.equalToSuperview().offset(20)
-            item.bottom.equalTo(priseLabel.snp.top).offset(-2)
+            item.right.equalToSuperview()
+            item.bottom.equalTo(priseLabel.snp.top)
         })
         
         priseLabel.snp.makeConstraints({ item in
             item.left.equalToSuperview().offset(20.93)
-            item.bottom.equalToSuperview().offset(-19)
+            item.bottom.equalToSuperview().offset(-18)
         })
         
         bagButton.snp.makeConstraints({ item in
@@ -118,5 +145,4 @@ class ItemCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }

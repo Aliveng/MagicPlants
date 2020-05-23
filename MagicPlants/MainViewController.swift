@@ -16,20 +16,27 @@ struct Item {
     let price: String
     let size: String
     let fonColor: UIColor
+  //  let 
 }
 
 class MainViewController: UIViewController {
     
-    var collectionView: UICollectionView!
+    lazy var collectionView: UICollectionView! = {
+        let layout: PlantsLayout = PlantsLayout(itemSize: CGSize(width: 216, height: 331))
+        layout.sectionInset.bottom = 100
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.showsHorizontalScrollIndicator = false
+        return view
+    }()
     
     let listItem: [Item] = [
         Item(image: .img9, name: "Pachira", price: "From $25", size: "75cm", fonColor: .fonBlue),
-        Item(image: .img7, name: "Zamiokulkas", price: "From $25", size: "75cm", fonColor: .fonOrange),
-        Item(image: .img8, name: "Zamiokulkas", price: "From $25", size: "75cm", fonColor: .fonBrown),
-        Item(image: .img6, name: "Chrysalidocar", price: "From $25", size: "75cm", fonColor: .fonBlue),
-        Item(image: .img4, name: "Strelitzia", price: "From $25", size: "75cm", fonColor: .fonOrange),
-        Item(image: .img3, name: "Dracaena", price: "From $35", size: "75cm", fonColor: .fonBrown),
-        Item(image: .img10, name: "Peperomy", price: "From $25", size: "75cm", fonColor: .fonBlue)
+        Item(image: .img7, name: "Zamiokulkas", price: "From $25", size: "50cm", fonColor: .fonOrange),
+        Item(image: .img8, name: "Zamiokulkas", price: "From $15", size: "35cm", fonColor: .fonBrown),
+        Item(image: .img6, name: "Chrysalidocar", price: "From $45", size: "80cm", fonColor: .fonBlue),
+        Item(image: .img4, name: "Strelitzia", price: "From $35", size: "60cm", fonColor: .fonOrange),
+        Item(image: .img3, name: "Dracaena", price: "From $35", size: "65cm", fonColor: .fonBrown),
+        Item(image: .img10, name: "Peperomy", price: "From $15", size: "30cm", fonColor: .fonBlue)
     ]
     
     lazy var bottomPanelView: NavigationView = {
@@ -39,16 +46,6 @@ class MainViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        
-      //  let layout = UICollectionViewFlowLayout()
-        let layout: PlantsLayout = PlantsLayout(itemSize: CGSize(width: 216, height: 331))
-    //    layout.itemSize = CGSize(width: 216, height: 331)
-    //    layout.scrollDirection = .horizontal
-    //    layout.minimumLineSpacing = 31
-  //      layout.sectionInset.bottom = 100
-        
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.showsHorizontalScrollIndicator = false
         
         view.addSubview(bottomPanelView)
         view.addSubview(collectionView)
@@ -65,12 +62,16 @@ class MainViewController: UIViewController {
         
         navigationController?.navigationBar.barTintColor = UIColor.white
         navigationController?.navigationBar.barStyle = .black
-        let menuButton = UIBarButtonItem(image: .menu, style: .plain, target: self,
+        let menuButton = UIBarButtonItem(image: .menu,
+                                         style: .plain,
+                                         target: self,
                                          action: #selector(didTapMenu) )
         menuButton.tintColor = .black
         navigationItem.leftBarButtonItem = menuButton
         
-        let closeButton = UIBarButtonItem(image: .close, style: .plain, target: self,
+        let closeButton = UIBarButtonItem(image: .close,
+                                          style: .plain,
+                                          target: self,
                                           action: #selector(didTapClose) )
         closeButton.tintColor = .black
         navigationItem.rightBarButtonItem = closeButton
@@ -103,8 +104,7 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //  return listItem.count
-        return 7
+        return listItem.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -115,13 +115,8 @@ extension MainViewController: UICollectionViewDataSource {
         (cell as? ItemCell)?.sizeLabel.text = "\(listItem[indexPath.row].size)"
         (cell as? ItemCell)?.cellCardView.backgroundColor = listItem[indexPath.row].fonColor
         cell.backgroundColor = .clear
-       // cell.layer.borderColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
-      //  cell.layer.borderWidth = 0.5
-     //   cell.layer.cornerRadius = 20
-    
         return cell
     }
-    
 }
 
 extension MainViewController: UICollectionViewDelegate {

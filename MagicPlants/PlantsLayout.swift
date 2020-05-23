@@ -15,7 +15,7 @@ class PlantsLayout: UICollectionViewFlowLayout {
     var scaleOffset: CGFloat = 250 // зона центра
     var scaleFactor: CGFloat = 0.9
     var alphaFactor: CGFloat = 1
-    var lineSpacing: CGFloat = 10.0
+    var lineSpacing: CGFloat = 8.0
     
     required init?(coder _: NSCoder) {
         fatalError()
@@ -106,7 +106,6 @@ class PlantsLayout: UICollectionViewFlowLayout {
             return nil
         }
 
-        
         let contentOffset = collectionView.contentOffset
         let size = collectionView.bounds.size
         
